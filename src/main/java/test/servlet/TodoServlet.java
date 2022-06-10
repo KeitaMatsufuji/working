@@ -261,7 +261,7 @@ public class TodoServlet extends HttpServlet {
 					|| expireMonth == null || expireDay == null) {
 				return doError(req, resp, "不正なパラメータです。");
 			}
-			name = new String(name.getBytes("iso-8859-1"), "utf-8");
+			// name = new String(name.getBytes("iso-8859-1"), "utf-8");
 			
 			/* -----------------------------------------
 			 * ●Optioinalによる判定に変更します。
@@ -435,7 +435,7 @@ public class TodoServlet extends HttpServlet {
 					|| expireMonth == null || expireDay == null) {
 				return doError(req, resp, "不正なパラメータです。");
 			}
-			name = new String(name.getBytes("iso-8859-1"), "utf-8");
+			// name = new String(name.getBytes("iso-8859-1"), "utf-8");
 			
 			/* -----------------------------------------
 			 * ●Nullが返される可能性があるのにNullチェックが行われていませんでした。
