@@ -8,7 +8,7 @@ function fieldChanged(){
         disabled = false;
     }
     
-    var login = getField("login");
+    const login = getField("login");
     if (disabled) {
         login.setAttribute("disabled", "disabled");
     }
