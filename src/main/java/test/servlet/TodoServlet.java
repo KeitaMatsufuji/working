@@ -42,19 +42,19 @@ public class TodoServlet extends HttpServlet {
 	 * データベース接続先のURL
 	 * 環境などにより値が変わる可能性があるものは、定数として定義します。
 	 */
-	private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521/orclpdb";
+	private static final String DB_URL = "jdbc:oracle:thin:@192.168.70.56:1521/ORCLPDB";
 	
 	/**
 	 * データベース接続時のユーザー名
 	 * 環境などにより値が変わる可能性があるものは、定数として定義します。
 	 */
-	private static final String DB_USER = "admin";
+	private static final String DB_USER = "test02";
 	
 	/**
 	 * データベース接続時のパスワード 
 	 * 環境などにより値が変わる可能性があるものは、定数として定義します。
 	 */
-	private static final String DB_PASSWORD = "admin";
+	private static final String DB_PASSWORD = "test03";
 	
 	/**
 	 * データベースのコネクションを保持します。
@@ -282,8 +282,9 @@ public class TodoServlet extends HttpServlet {
 				return doError(req, resp, "不正なパラメータです。");
 			}
 			targetItem.setTask(name);
-
-			executeUpdate(createInsertSQL(targetItem));
+			
+			String sql = createInsertSQL(targetItem);
+			executeUpdate(sql);
 
 			// タスクを取得する
 			TodoTaskEntity[] tasks = getTasks();
